@@ -1,6 +1,3 @@
-from split_settings.tools import optional, include
-
-
 # Logging
 # https://docs.djangoproject.com/en/3.2/topics/logging/
 

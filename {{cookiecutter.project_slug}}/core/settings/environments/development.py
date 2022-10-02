@@ -1,8 +1,5 @@
-import socket
 import logging
-
-
-from decouple import config
+import socket
 
 from core.settings.components.common import INSTALLED_APPS, DATABASES, MIDDLEWARE
 
