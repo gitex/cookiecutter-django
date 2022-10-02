@@ -4,12 +4,11 @@ import logging
 
 from decouple import config
 
-from core.settings.components.common import INSTALLED_APPS, DATABASE, MIDDLEWARE
+from core.settings.components.common import INSTALLED_APPS, DATABASES, MIDDLEWARE
 
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    config('DOMAIN_NAME'),
     'localhost',
     '0.0.0.0',  # noqa: S104
     '127.0.0.1',

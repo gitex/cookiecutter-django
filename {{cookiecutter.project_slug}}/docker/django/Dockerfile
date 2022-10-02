@@ -3,10 +3,6 @@
 # https://docs.docker.com/develop/develop-images/multistage-build/
 FROM python:3.10-slim-buster AS development_build
 
-LABEL maintainer="{{ cookiecutter.project_domain }}"
-LABEL vendor="{{ cookiecutter.project_domain }}"
-
-
 # `DJANGO_ENV` arg is used to make prod / dev builds:
 ARG DJANGO_ENV \
   # Needed for fixing permissions of files created by Docker:
@@ -78,7 +74,7 @@ RUN groupadd -g "${GID}" -r web \
   && chown web:web '/var/www/django/static' '/var/www/django/media'
 
 # Copy only requirements, to cache them in docker layer
-COPY --chown=web:web ./poetry.lock ./pyproject.toml /code/
+COPY --chown=web:web ./pyproject.toml /code/
 
 # Project initialization:
 # hadolint ignore=SC2046

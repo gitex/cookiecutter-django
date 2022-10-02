@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-set -o errexit
-set -o nounset
-set -o pipefail
-
 # Initializing global variables and functions:
 : "${DJANGO_ENV:=development}"
 
@@ -20,3 +16,5 @@ run () {
   # Run development server
   python -Wd manage.py runserver 0.0.0.0:8000
 }
+
+run
