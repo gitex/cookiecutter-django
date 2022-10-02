@@ -11,6 +11,8 @@ djangorestframework = "^3.14.0"
 django-filter = "^22.1"
 python-decouple = "^3.6"
 dj-database-url = "^1.0.0"
+django-split-settings = "^1.2.0"
+structlog = "^22.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.3"
