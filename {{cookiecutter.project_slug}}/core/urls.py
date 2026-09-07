@@ -18,24 +18,27 @@ admin.autodiscover()
 
 urlpatterns = [
     # Apps:
-    path('api/', include(api_urls, namespace='api')),
-
+    path("api/", include(api_urls, namespace="api")),
     # Health checks:
-    path('health/', include(health_urls)),
-
+    path("health/", include(health_urls)),
     # django-admin:
-    path('admin/doc/', include(admindocs_urls)),
-    path('admin/', admin.site.urls),
-
+    path("admin/doc/", include(admindocs_urls)),
+    path("admin/", admin.site.urls),
     # Text and xml static files:
-    path('robots.txt', TemplateView.as_view(
-        template_name='txt/robots.txt',
-        content_type='text/plain',
-    )),
-    path('humans.txt', TemplateView.as_view(
-        template_name='txt/humans.txt',
-        content_type='text/plain',
-    )),
+    path(
+        "robots.txt",
+        TemplateView.as_view(
+            template_name="txt/robots.txt",
+            content_type="text/plain",
+        ),
+    ),
+    path(
+        "humans.txt",
+        TemplateView.as_view(
+            template_name="txt/humans.txt",
+            content_type="text/plain",
+        ),
+    ),
 ]
 
 
@@ -45,7 +48,7 @@ if settings.DEBUG:  # pragma: no cover
 
     urlpatterns = [
         # URLs specific only to django-debug-toolbar:
-        path('__debug__/', include(debug_toolbar.urls)),
+        path("__debug__/", include(debug_toolbar.urls)),
         *urlpatterns,
         # Serving media files in development only:
         *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),

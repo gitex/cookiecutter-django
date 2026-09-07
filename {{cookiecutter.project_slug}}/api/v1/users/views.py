@@ -1,7 +1,6 @@
-from rest_framework.viewsets import GenericViewSet
-from rest_framework import mixins
-
 from core.apps.users.models import User
+from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
 
 from .serializers import UserSerializer
 
